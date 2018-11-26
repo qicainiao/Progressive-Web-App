@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+  <script src="./scripts/index.js" charset="utf-8"></script>
+  <script src="./scripts/test.js" charset="utf-8"></script>
+  <script type="text/javascript">
+     if ("ServiceWorker" in window) {
+         navigator.serviceWorker.register("/sw.js")
+         .then((registation) => {
+           console.log("serviceWorker登记范围",registation);
+         }).catch((err) => {
+             console.log("serviceWorker登记失败",err);
+         });
+     }
+  </script>
+</body>
+</html>
